@@ -1,0 +1,50 @@
+nav {
+    background-color: rgba(29, 115, 189, 0.208);
+    text-align: center;
+}
+
+.artist-pics {
+    width: 200px;
+}
+
+.artist-list {
+    position: relative;
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        align-content: center;
+        justify-content: space-evenly;
+      
+      
+      
+}
+
+.artist-list:hover figcaption {
+    color: rgb(255, 241, 159);
+   
+}
+.artist-list:hover img {
+    opacity: .5;
+   
+}
+
+.artist-list img {
+    width: 70%;
+    max-height: 10%;
+    /* max-width: 600px; */
+}
+
+.artist-list figcaption {
+    position: absolute;
+    top: 0;
+   
+    
+    /* cosmetics */
+    box-sizing: border-box;
+    width: 600px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 100px;
+    
+}

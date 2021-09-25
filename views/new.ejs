@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+    <link rel="stylesheet" href="/center.css">
+    <title>Submissions | Label</title>
+</head>
+<body>
+    <%- include('./partials/nav')  %>
+
+   
+            <div class="center">
+                <h1>Submissions</h1>
+                <form action="/label" method="POST">
+                    <label for="artistName"> Artist Name:</label>
+                    <input type="text" name="artistName">
+                    <br>
+                    <label for="genre"> Genre:</label>
+                    <input type="text" name="genre">
+                    <br>
+                    <label for="location"> Location:</label>
+                    <input type="text" name="location">
+                    <br>
+                    <label for="follow"> Follow:</label>
+                    <input type="text" name="follow">
+                    <br>
+                    <label for="spotify"> Spotify:</label>
+                    <input type="text" name="spotify">
+                    <br>
+                    <label for="images"> Images:</label>
+                    <input type="text" name="images">
+                    <br>
+                    <input type="submit" value="add">
+                </form> 
+ 
+</body>
+</html>

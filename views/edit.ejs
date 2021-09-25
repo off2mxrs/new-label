@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+    <title>Edit | Label</title>
+</head>
+<body>
+    <%- include('./partials/nav')  %>
+    <h1>EDIT <%= oneArtist.artistName  %> </h1>
+
+    <form action="/label/<%= oneArtist._id %>?_method=PUT" method="POST">
+        <label for="artistName"> Artist:</label>
+        <input type="text" name="artistName" value="<%= oneArtist.artistName %>">
+        <br>
+        <label for="genre"> Genre:</label>
+        <input type="text" name="genre" value="<%= oneArtist.genre %>">
+        <br>
+        <label for="location"> Location:</label>
+        <input type="text" name="location" value="<%= oneArtist.location %>">
+        <br>
+        <label for="follow"> Follow:</label>
+        <input type="text" name="follow" value="<%= oneArtist.follow %>">
+        <br>
+        <label for="spotify"> Spotify:</label>
+        <input type="text" name="spotify" value="<%= oneArtist.spotify %>">
+        <br>
+        <label for="images"> Images:</label>
+        <input type="text" name="images" value="<%= oneArtist.images %>">
+        <br>
+        <label for="gif"> Gif:</label>
+        <input type="text" name="gif" value="<%= oneArtist.gif %>">
+        <br>
+        <label for="video"> Video:</label>
+        <input type="text" name="video" value="<%= oneArtist.video %>">
+        <br>
+        <input type="submit" value="add">
+    </form>
+<!--         
+    <form  action="/label/<%= oneArtist._id %>?_method=DELETE " method="POST"> %>
+        <input class="delete" type="submit" value="Delete <%= oneArtist.name  %> ">
+    </form> -->
+</body>
+</html>

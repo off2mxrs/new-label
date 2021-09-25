@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+    <link rel="stylesheet" href="/show.css">
+    <link rel="stylesheet" href="/popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="/share.css">
+    <title><%= oneArtist.artistName  %> | Label </title>
+</head>
+<body>
+    <header>
+        <iframe class="header-gif" src="<%= oneArtist.gif %>"  ></iframe>
+    </header>
+    
+    <section class="sidebar-left">
+        <%- include('./partials/nav')  %> 
+    </section>
+
+    <main>
+        <h1 class="artist-name"><%= oneArtist.artistName  %> </h1>
+        <span class="socials">
+               <iframe class="follow" src="<%= oneArtist.follow %> " width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                
+               <div class="details">
+                   <p><%= oneArtist.genre %> </p>
+                   <p><%= oneArtist.location %> </p>
+              </div>
+              
+              <iframe class="youtube" width="560" height="315" src=" <%= oneArtist.video  %> " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </span>
+
+        <!-- CONTENT -->
+        <section class="content">
+            <div class="card" onclick="togglePopup()">
+                <h3>Media</h3>
+                <p> Lorem </p>
+                <div class="visual blue"><img class="artist-pics" src="<%= oneArtist.images[0] %> " alt="Image of <%= oneArtist.artistName%>" ></div>
+            </div>
+             
+            <div class="card" onclick="togglePopup2()">
+                <h3>About</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+                <div class="visual pink">Upcoming Shows</div>
+            </div>
+
+            <div class="card" onclick="togglePopup3()">
+                <h3>Merch</h3>
+                <p>Shop Merch!</p>
+                <div class="visual green"></div>
+            </div>
+ 
+        </section>
+          <!-- CONTENT END-->
+
+        <!-- HIDDEN CONTENT POPUPS -->
+        <section class="popups">
+            <div class="popup" id="popup-1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup()">&times;</div>
+            <div class="card">
+                <h3>Media</h3>
+                <p> Lorem </p>
+                <div class="visual blue"><img class="artist-pics" src="<%= oneArtist.images[0] %> " alt="Image of <%= oneArtist.artistName%>" ></div>
+            </div>
+        </div>
+            </div>
+
+
+            <div class="popup" id="popup-2">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup2()">&times;</div>
+            <div class="card">
+                    <h3>About</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adip</p>
+                    <div class="visual pink">Upcoming Shows</div>
+            </div>
+        </div>
+            </div>
+
+            <div class="popup" id="popup-3">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="close-btn" onclick="togglePopup3()">&times;</div>
+            <div class="card"> 
+                <h3>Merch</h3>
+                <p>Shop Merch!</p>
+                <div class="visual green"></div>
+            </div>
+        </div>
+            </div>
+
+          
+
+        </section>
+          <!-- HIDDEN CONTENT POPUPS END -->
+
+    </main>
+
+    <section class="sidebar-right">
+        <section id="share-section">
+            <div class="share-button">
+                <span><i class="fas fa-share-alt"></i> More <%= oneArtist.artistName%>!</span>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </section>
+        <iframe src="<%= oneArtist.spotify %> " width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </section>
+
+    <footer>
+        <a href="/label/<%= oneArtist._id %>/edit ">Edit</a>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script type="text/javascript">
+        function togglePopup() {
+            document.getElementById("popup-1").classList.toggle("active");
+        }
+     </script>
+    <script type="text/javascript">
+        function togglePopup2() {
+            document.getElementById("popup-2").classList.toggle("active");
+        }
+     </script>
+    <script type="text/javascript">
+        function togglePopup3() {
+            document.getElementById("popup-3").classList.toggle("active");
+        }
+     </script>
+     <!-- JAVASCRIPT END -->
+</body>
+</html>
